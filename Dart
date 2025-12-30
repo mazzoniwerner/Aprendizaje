@@ -1,0 +1,19 @@
+var n = "lucas";
+var a = 25 ; 
+
+void nombre (){
+  
+  print ("mi nombre es " + n);
+}
+
+void edad (){
+  
+  print ("mi edad es $a");
+}
+
+void main (){
+  
+  nombre();
+  edad();
+  
+}

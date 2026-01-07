@@ -1,0 +1,11 @@
+int a = 5;
+
+int b = 6;
+int c = b+1;
+int d = a + b ;
+
+void main (){
+  
+  print (c);
+  
+}

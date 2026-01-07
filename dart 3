@@ -1,0 +1,31 @@
+var a = ["lucas", "mazzoni"]; 
+
+void nombre (){
+  
+ print (a[0]);
+  
+}
+
+void apellido (){
+  
+  
+  print (a[1]);
+  
+}
+
+void agregar(){
+  
+  
+  a.add("werner");
+  print (a[2]);
+  
+}
+
+void main (){
+  
+  nombre();
+  apellido();
+  agregar();
+  
+  
+}

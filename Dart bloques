@@ -13,3 +13,20 @@ void main (){
   
 }
 
+///////////////////////////////////////
+//ejemplo numerico
+
+void calcula(double n){
+  
+ 
+  n=n*1.19;
+  print ('Tu calculo es $n');
+}
+
+
+void main(){
+  
+  calcula(5);
+  
+  
+}

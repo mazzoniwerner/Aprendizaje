@@ -1,0 +1,15 @@
+void saludo(String n){
+  
+  print ('Hola $n bienvenido');
+  
+}
+
+
+
+void main (){
+  
+  
+  saludo('lucas');
+  
+}
+

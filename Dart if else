@@ -1,3 +1,4 @@
+//sin parametro
 int n = 5;
 
 void main (){
@@ -14,4 +15,29 @@ void main (){
     
     
   }
+}
+
+/////////////////////////////////////////////////
+//con parametro
+
+void condicion(int n){
+  
+  
+  if (n<10){
+    
+    print ('Es menor a 10');
+    
+  }
+  else {
+    
+    print ('Es mayor a 10');
+    
+    
+  }
+}
+
+void main(){
+  
+  condicion(5);
+  
 }

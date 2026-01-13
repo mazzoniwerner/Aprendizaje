@@ -41,3 +41,30 @@ void main(){
   condicion(5);
   
 }
+
+
+//////////////////////////////////////////
+//EJEMPLO IVA
+
+
+void iva(double n){
+  
+  
+  if (n<=0){
+    
+    print ("no tuvo ingresos");
+  }
+  else {
+    
+    n=n*1.19;
+    print ("Su iva es: $n");
+  }
+   
+}
+
+ void main(){
+   
+   
+   iva(-1);
+   
+ }

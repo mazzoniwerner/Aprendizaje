@@ -7,25 +7,22 @@ void nombre (){
 }
 
 void apellido (){
-  
-  
   print (a[1]);
-  
 }
 
 void agregar(){
-  
-  
   a.add("werner");
   print (a[2]);
   
 }
 
 void main (){
-  
   nombre();
   apellido();
-  agregar();
-  
-  
+  agregar(); 
 }
+
+////////////////////////
+//tambien al crear una lista puedo especificar que daré una lista de string así List<String> a = ["lucas", "mazzoni"]; 
+//cuando uso el var, dart adivina que es una lista, tambien puedo colocar var a = 2 y adivinará que a es una variable de numeros enteros = a 2 y si
+//coloco var a = ["a","b"] adivinará que es una lista de variables string. 

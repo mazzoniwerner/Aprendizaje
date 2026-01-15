@@ -1,0 +1,12 @@
+List <String> funcionalidades = ["Usuario","Pagos","Perfil","Notificaciones"];
+
+void main(){
+
+for (var funcionalidad in funcionalidades){
+  
+  
+  print ("Implementando: $funcionalidad");
+  
+}
+  
+}

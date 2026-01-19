@@ -10,3 +10,13 @@ for (var funcionalidad in funcionalidades){
 }
   
 }
+////////////////////////////////////////
+//////////////////////////////////////
+void main (){
+  
+  for (var i=1;i<10;i=i+1){
+    
+    print (i);
+  }
+  
+}

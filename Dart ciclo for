@@ -34,3 +34,31 @@ void main (){
   
   }
 }
+
+
+/////////////////////////////////////
+////////////////////////////////////
+void main (){
+  
+  List<int> a= [200, -50, 1000, 0, -10, 500];
+    
+    for (var i in a){
+      
+      if (i<0){
+        
+        print ("$i es menor a cero");
+      }
+      
+      
+      if(i==0){
+         print ("$i es cero");
+      }
+      
+      
+      if(i>0){
+         print ("$i es mayor  cero");
+      }
+      
+ 
+}
+}

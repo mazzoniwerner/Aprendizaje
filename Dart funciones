@@ -17,3 +17,25 @@ void main (){
   edad();
   
 }
+
+/////////////////////////////////////////////
+////////////////////////////////////////////
+void pago(num n){
+  
+  if (n>=500){
+    
+    print ("$n es un numero grande");
+      
+  }
+  else {
+    
+    print ("$n es un numero pequeño");
+  }
+  
+}
+
+ void main (){
+   
+   pago(500);
+     
+ } 

@@ -1,0 +1,13 @@
+void main(){
+
+  var usuario={
+  
+  "Nombre": "Lucas",
+  "Edad": 33
+     
+};
+
+ print(usuario["Nombre"]);
+ print(usuario["Edad"]);
+  
+}

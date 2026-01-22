@@ -1,0 +1,15 @@
+class Usuario {
+  
+  String nombre;
+  num saldo;
+  
+  Usuario(this.nombre, this.saldo);
+}
+
+void main(){
+  
+  var user1 = Usuario("Lucas", 1000);
+  var user2 = Usuario("Gabi", 1500);
+  print (user1.saldo);
+  print (user2.saldo);
+}

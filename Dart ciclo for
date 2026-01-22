@@ -62,3 +62,52 @@ void main (){
  
 }
 }
+///////////////////////////////////////
+//////////////////////////////////////
+
+void pago(num n){
+  if (n>=500){
+
+    print ("$n es un numero grande");
+
+  }
+
+  else {
+
+    print ("$n es un numero pequeño");
+
+  }
+
+}
+
+ void main (){
+
+   pago(0);
+   
+
+ } 
+
+
+/////////////////////////////////////////
+////////////////////////////////////////
+
+void main (){
+
+  List<num> a = [200, -50, 1000, 0, -10, 500];
+
+  num total = 0;
+ 
+
+  for (num i in a){
+
+    total = total + i; //esto es para sumar la lista a entera, sacar toda su sumatoria. 
+
+    print (total);
+
+  }
+
+  print (total);
+
+  
+
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje Dart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f3460, #533483);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00d9ff;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        .dart-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background: rgba(15, 52, 96, 0.8);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #00d9ff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: #00d9ff;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: rgba(22, 33, 62, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        section h2 {
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, #00d9ff, #533483);
+            border-radius: 2px;
+        }
+
+        .description {
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        pre {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            border: 1px solid #30363d;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        .keyword {
+            color: #ff7b72;
+        }
+
+        .string {
+            color: #a5d6ff;
+        }
+
+        .comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        .function {
+            color: #d2a8ff;
+        }
+
+        .number {
+            color: #79c0ff;
+        }
+
+        .type {
+            color: #7ee787;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(15, 52, 96, 0.5);
+            color: #a0a0a0;
+        }
+
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            pre {
+                padding: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="dart-logo">&#x1F3AF;</div>
+        <h1>Aprendizaje Dart</h1>
+        <p>Guia de conceptos fundamentales del lenguaje Dart</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#operaciones">Operaciones</a></li>
+            <li><a href="#bloques">Bloques</a></li>
+            <li><a href="#funciones">Funciones</a></li>
+            <li><a href="#if-else">If/Else</a></li>
+            <li><a href="#listas">Listas</a></li>
+            <li><a href="#ciclo-for">Ciclo For</a></li>
+            <li><a href="#mapas">Mapas</a></li>
+            <li><a href="#clases">Clases</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="operaciones">
+            <h2>Operaciones Basicas</h2>
+            <p class="description">
+                Las operaciones basicas en Dart permiten realizar calculos matematicos con variables numericas.
+                Puedes declarar variables enteras con <code>int</code> y realizar sumas, restas, multiplicaciones y divisiones.
+            </p>
+            <pre><code><span class="type">int</span> a = <span class="number">5</span>;
+<span class="type">int</span> b = <span class="number">6</span>;
+<span class="type">int</span> c = b + <span class="number">1</span>;
+<span class="type">int</span> d = a + b;
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="function">print</span>(c);  <span class="comment">// Imprime: 7</span>
+}</code></pre>
+        </section>
+
+        <section id="bloques">
+            <h2>Bloques de Codigo</h2>
+            <p class="description">
+                Los bloques permiten agrupar codigo y pasar parametros a funciones.
+                Usando <code>String n</code> como parametro, podemos personalizar la salida de nuestras funciones.
+            </p>
+            <pre><code><span class="keyword">void</span> <span class="function">saludo</span>(<span class="type">String</span> n) {
+  <span class="function">print</span>(<span class="string">'Hola $n bienvenido'</span>);
+}
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="function">saludo</span>(<span class="string">'lucas'</span>);
+}
+
+<span class="comment">// Ejemplo numerico con calculo de IVA</span>
+<span class="keyword">void</span> <span class="function">calcula</span>(<span class="type">double</span> n) {
+  n = n * <span class="number">1.19</span>;
+  <span class="function">print</span>(<span class="string">'Tu calculo es $n'</span>);
+}
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="function">calcula</span>(<span class="number">5</span>);
+}</code></pre>
+        </section>
+
+        <section id="funciones">
+            <h2>Funciones</h2>
+            <p class="description">
+                Las funciones en Dart permiten encapsular logica reutilizable.
+                Pueden tener parametros tipados y pueden acceder a variables globales.
+            </p>
+            <pre><code><span class="keyword">var</span> n = <span class="string">"lucas"</span>;
+<span class="keyword">var</span> a = <span class="number">25</span>;
+
+<span class="keyword">void</span> <span class="function">nombre</span>() {
+  <span class="function">print</span>(<span class="string">"mi nombre es "</span> + n);
+}
+
+<span class="keyword">void</span> <span class="function">edad</span>() {
+  <span class="function">print</span>(<span class="string">"mi edad es $a"</span>);
+}
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="function">nombre</span>();
+  <span class="function">edad</span>();
+}
+
+<span class="comment">// Funcion con parametro y condicional</span>
+<span class="keyword">void</span> <span class="function">pago</span>(<span class="type">num</span> n) {
+  <span class="keyword">if</span> (n >= <span class="number">500</span>) {
+    <span class="function">print</span>(<span class="string">"$n es un numero grande"</span>);
+  } <span class="keyword">else</span> {
+    <span class="function">print</span>(<span class="string">"$n es un numero pequeno"</span>);
+  }
+}</code></pre>
+        </section>
+
+        <section id="if-else">
+            <h2>Condicionales If/Else</h2>
+            <p class="description">
+                Los condicionales permiten ejecutar codigo basado en condiciones.
+                Dart usa la sintaxis clasica de if/else para controlar el flujo del programa.
+            </p>
+            <pre><code><span class="comment">// Sin parametro</span>
+<span class="type">int</span> n = <span class="number">5</span>;
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="keyword">if</span> (n < <span class="number">10</span>) {
+    <span class="function">print</span>(<span class="string">'Es menor a 10'</span>);
+  } <span class="keyword">else</span> {
+    <span class="function">print</span>(<span class="string">'Es mayor a 10'</span>);
+  }
+}
+
+<span class="comment">// Con parametro</span>
+<span class="keyword">void</span> <span class="function">condicion</span>(<span class="type">int</span> n) {
+  <span class="keyword">if</span> (n < <span class="number">10</span>) {
+    <span class="function">print</span>(<span class="string">'Es menor a 10'</span>);
+  } <span class="keyword">else</span> {
+    <span class="function">print</span>(<span class="string">'Es mayor a 10'</span>);
+  }
+}
+
+<span class="comment">// Ejemplo calculo de IVA</span>
+<span class="keyword">void</span> <span class="function">iva</span>(<span class="type">double</span> n) {
+  <span class="keyword">if</span> (n <= <span class="number">0</span>) {
+    <span class="function">print</span>(<span class="string">"no tuvo ingresos"</span>);
+  } <span class="keyword">else</span> {
+    n = n * <span class="number">1.19</span>;
+    <span class="function">print</span>(<span class="string">"Su iva es: $n"</span>);
+  }
+}</code></pre>
+        </section>
+
+        <section id="listas">
+            <h2>Listas</h2>
+            <p class="description">
+                Las listas en Dart son colecciones ordenadas de elementos. Puedes acceder a elementos por indice
+                y usar metodos como <code>.add()</code> para agregar nuevos elementos.
+                Dart puede inferir el tipo o puedes especificarlo con <code>List&lt;String&gt;</code>.
+            </p>
+            <pre><code><span class="keyword">var</span> a = [<span class="string">"lucas"</span>, <span class="string">"mazzoni"</span>];
+
+<span class="keyword">void</span> <span class="function">nombre</span>() {
+  <span class="function">print</span>(a[<span class="number">0</span>]);  <span class="comment">// Accede al primer elemento</span>
+}
+
+<span class="keyword">void</span> <span class="function">apellido</span>() {
+  <span class="function">print</span>(a[<span class="number">1</span>]);  <span class="comment">// Accede al segundo elemento</span>
+}
+
+<span class="keyword">void</span> <span class="function">agregar</span>() {
+  a.<span class="function">add</span>(<span class="string">"werner"</span>);  <span class="comment">// Agrega un elemento</span>
+  <span class="function">print</span>(a[<span class="number">2</span>]);
+}
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="function">nombre</span>();
+  <span class="function">apellido</span>();
+  <span class="function">agregar</span>();
+}
+
+<span class="comment">// Tambien puedes especificar el tipo:</span>
+<span class="comment">// List&lt;String&gt; a = ["lucas", "mazzoni"];</span></code></pre>
+        </section>
+
+        <section id="ciclo-for">
+            <h2>Ciclo For</h2>
+            <p class="description">
+                El ciclo for permite iterar sobre colecciones o ejecutar codigo un numero determinado de veces.
+                Dart soporta tanto el for clasico como el for-in para recorrer listas.
+            </p>
+            <pre><code><span class="comment">// For-in con lista de strings</span>
+<span class="type">List</span>&lt;<span class="type">String</span>&gt; funcionalidades = [<span class="string">"Usuario"</span>, <span class="string">"Pagos"</span>, <span class="string">"Perfil"</span>, <span class="string">"Notificaciones"</span>];
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="keyword">for</span> (<span class="keyword">var</span> funcionalidad <span class="keyword">in</span> funcionalidades) {
+    <span class="function">print</span>(<span class="string">"Implementando: $funcionalidad"</span>);
+  }
+}
+
+<span class="comment">// For clasico con contador</span>
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i < <span class="number">10</span>; i = i + <span class="number">1</span>) {
+    <span class="function">print</span>(i);
+  }
+}
+
+<span class="comment">// Sumatoria de una lista</span>
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="type">List</span>&lt;<span class="type">num</span>&gt; a = [<span class="number">200</span>, <span class="number">-50</span>, <span class="number">1000</span>, <span class="number">0</span>, <span class="number">-10</span>, <span class="number">500</span>];
+  <span class="type">num</span> total = <span class="number">0</span>;
+
+  <span class="keyword">for</span> (<span class="type">num</span> i <span class="keyword">in</span> a) {
+    total = total + i;
+    <span class="function">print</span>(total);
+  }
+}</code></pre>
+        </section>
+
+        <section id="mapas">
+            <h2>Mapas (Diccionarios)</h2>
+            <p class="description">
+                Los mapas son colecciones de pares clave-valor. Son utiles para almacenar datos estructurados
+                como informacion de usuarios. Accedes a los valores usando la clave entre corchetes.
+            </p>
+            <pre><code><span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="keyword">var</span> usuario = {
+    <span class="string">"Nombre"</span>: <span class="string">"Lucas"</span>,
+    <span class="string">"Edad"</span>: <span class="number">33</span>
+  };
+
+  <span class="function">print</span>(usuario[<span class="string">"Nombre"</span>]);  <span class="comment">// Imprime: Lucas</span>
+  <span class="function">print</span>(usuario[<span class="string">"Edad"</span>]);    <span class="comment">// Imprime: 33</span>
+}</code></pre>
+        </section>
+
+        <section id="clases">
+            <h2>Clases</h2>
+            <p class="description">
+                Las clases permiten crear objetos con propiedades y metodos. En Dart, puedes usar
+                constructores abreviados con <code>this.propiedad</code> para inicializar campos facilmente.
+            </p>
+            <pre><code><span class="keyword">class</span> <span class="type">Usuario</span> {
+  <span class="type">String</span> nombre;
+  <span class="type">num</span> saldo;
+
+  <span class="comment">// Constructor abreviado</span>
+  <span class="type">Usuario</span>(<span class="keyword">this</span>.nombre, <span class="keyword">this</span>.saldo);
+}
+
+<span class="keyword">void</span> <span class="function">main</span>() {
+  <span class="keyword">var</span> user1 = <span class="type">Usuario</span>(<span class="string">"Lucas"</span>, <span class="number">1000</span>);
+  <span class="keyword">var</span> user2 = <span class="type">Usuario</span>(<span class="string">"Gabi"</span>, <span class="number">1500</span>);
+
+  <span class="function">print</span>(user1.saldo);  <span class="comment">// Imprime: 1000</span>
+  <span class="function">print</span>(user2.saldo);  <span class="comment">// Imprime: 1500</span>
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Repositorio de Aprendizaje Dart</p>
+        <p>Creado con HTML, CSS y mucha practica</p>
+    </footer>
+</body>
+</html>
